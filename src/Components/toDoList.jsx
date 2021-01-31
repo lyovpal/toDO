@@ -11,9 +11,11 @@ class ToDoList extends React.Component {
 
     render() {
        return (
-      <div className="toDo">
-        {this.props.data && this.props.data.map((item) => <div><p>{item}</p> <img src="./images/delete" alt="delete"/></div> )}
-      </div>
+      <ul className="toDo">
+        {this.props.data && this.props.data.map((item) => 
+          <li><span>{item} <button type="button" className="close" onClick={this.onClickClose}>&times;</button></span> </li>
+         )}
+      </ul>
     );
   }
 }
